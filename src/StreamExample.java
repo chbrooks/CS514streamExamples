@@ -39,8 +39,8 @@ public class StreamExample {
         Stream<String> stream = stringList.stream();
 
         long c = stream
-                    .filter(word -> word.startsWith("c"))
-                    .count();
+                .filter(word -> word.startsWith("c"))
+                .count();
         System.out.format("There are %d 'c' words%n", c);
     }
 
@@ -165,7 +165,7 @@ public class StreamExample {
 
     }
 
-    public void test10() {
+    public void test10()  {
         stringList.clear();
         stringList.add("cat");
         stringList.add("cat");
@@ -180,6 +180,19 @@ public class StreamExample {
         System.out.println(results);
 
     }
+
+    public void testmap() {
+        stringList.clear();
+        stringList.add("cat");
+        stringList.add("cat");
+        stringList.add("dog");
+        stringList.add("llama");
+        stringList.add("kangaroo");
+        List<String> results = stringList.stream()
+                .map(w -> w.toLowerCase())
+                .collect(Collectors.toList());
+    }
+
 
     public void test11() {
         stringList.clear();
